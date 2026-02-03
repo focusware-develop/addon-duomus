@@ -3,8 +3,11 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:20.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-RUN apk add --no-cache pip3
-RUN pip install esp-idf-monitor
+RUN \
+  apk add --no-cache \
+    python3 \
+    py3-pip \
+    && pip3 install esp-idf-monitor
 
 # Copy root filesystem
 COPY rootfs /
