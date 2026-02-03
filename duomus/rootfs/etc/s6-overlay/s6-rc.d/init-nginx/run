@@ -7,14 +7,17 @@
 readonly NGINX_CONFIG_PATH=/etc/nginx/http.d/default.conf
 declare ipaddress
 
-# Check if a username is set
-bashio::config.require.ipaddress 'ipaddress'
-
+# Check if a ipaddress is set
 ipaddress=$(bashio::config 'ipaddress')
 ipaddress=$(bashio::string.lower "${ipaddress}")
 
+if ! bashio::var.has_value "${ipaddress}"; then
+    bashio::log.info 'No ip address is defined in the configuration!'
+    exit 0
+fi
+
 # Update the proxy url.
-sed -i "s/proxy_pass .*/proxy_pass http:\/\/${ipaddress}/" "${NGINX_CONFIG_PATH}" \
+sed -i "s/proxy_pass .*/proxy_pass http:\/\/${ipaddress}\/;/" "${NGINX_CONFIG_PATH}" \
     || bashio::exit.nok 'Failed configuring ip address'
 
 bashio::log.notice 'Changed the proxy to: http://'${ipaddress}
