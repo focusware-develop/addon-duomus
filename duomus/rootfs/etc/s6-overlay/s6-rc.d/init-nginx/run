@@ -14,7 +14,7 @@ ipaddress=$(bashio::config 'ipaddress')
 ipaddress=$(bashio::string.lower "${ipaddress}")
 
 # Update the proxy url.
-sed -i "s/proxy_pass\\ .*/proxy_pass\\ http://${ipaddress}/" "${NGINX_CONFIG_PATH}" \
+sed -i "s/proxy_pass .*/proxy_pass http:\/\/${ipaddress}/" "${NGINX_CONFIG_PATH}" \
     || bashio::exit.nok 'Failed configuring ip address'
 
 bashio::log.notice 'Changed the proxy to: http://'${ipaddress}
