@@ -12,12 +12,13 @@ arch:
   - amd64
 host_network: true
 host_dbus: true
+devices:
+  - /dev/ttyAMA0
+  - /dev/ttyACM0
+  - /dev/ttyAMA10
 privileged:
   - SYS_ADMIN
   - SYS_RESOURCE
-  - NET_ADMIN
-  - NET_RAW
-  - BPF
 map:
   - homeassistant_config:rw
   - addon_config:rw
