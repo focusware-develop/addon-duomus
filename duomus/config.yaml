@@ -1,6 +1,6 @@
 ---
 name: DuoMus
-version: v0.0.2
+version: v0.0.3
 slug: duomus
 description: DuoMus support tools
 url: https://github.com/focusware-develop/addon-duomus
@@ -20,7 +20,6 @@ privileged:
   - SYS_ADMIN
   - SYS_RESOURCE
 map:
-  - homeassistant_config:rw
   - addon_config:rw
 options:
   ipaddress: ""
