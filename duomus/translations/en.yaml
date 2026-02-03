@@ -1,0 +1,10 @@
+---
+configuration:
+  log_level:
+    name: Log level
+    description: The amount of logging the add-on should do.
+  ipaddress:
+    name: IP address
+    description: >-
+      IP address of the client
+      This is the IP address of the DuoMus hardware.
