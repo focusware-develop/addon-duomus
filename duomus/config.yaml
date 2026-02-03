@@ -22,21 +22,7 @@ map:
   - homeassistant_config:rw
   - addon_config:rw
 options:
-  admin_url: ""
-  management_url: ""
-  setup_key: ""
-  hostname: ""
-  rosenpass: false
-  rosenpass_permissive: false
-  env_vars: []
+  ipaddress: ""
 schema:
-  admin_url: str
-  management_url: str
-  setup_key: str
-  hostname: str
-  rosenpass: bool
-  rosenpass_permissive: bool
-  env_vars:
-    - name: match(^NB_([A-Z0-9_])+$)
-      value: str
+  ipaddress: str
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
