@@ -21,7 +21,7 @@ RUN \
 COPY rootfs /
 
 # Copy our conf into the nginx http.d folder.
-COPY ingress.conf /etc/nginx/http.d/
+COPY ingress.conf /etc/nginx/http.d/default.conf
 
 # Launch nginx with info options.
 CMD [ "nginx","-g","daemon off;error_log /dev/stdout info;" ]
