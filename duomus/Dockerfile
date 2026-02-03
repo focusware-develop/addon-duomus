@@ -7,7 +7,7 @@ RUN \
   apk add --no-cache \
     python3 \
     py3-pip \
-    && pip3 install esp-idf-monitor
+    && pip3 install esp-idf-monitor esptool
 
 # Copy root filesystem
 COPY rootfs /
