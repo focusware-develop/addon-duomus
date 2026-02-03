@@ -3,14 +3,28 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:20.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+# Add ESP32 related tools
 RUN \
   apk add --no-cache \
     python3 \
     py3-pip \
     && pip3 install esp-idf-monitor esptool
 
+# Add nginx and create the run folder for nginx.
+RUN \
+  apk --no-cache add \
+    nginx \
+  \
+  && mkdir -p /run/nginx
+
 # Copy root filesystem
 COPY rootfs /
+
+# Copy our conf into the nginx http.d folder.
+COPY ingress.conf /etc/nginx/http.d/
+
+# Launch nginx with info options.
+CMD [ "nginx","-g","daemon off;error_log /dev/stdout info;" ]
 
 # Build arguments
 ARG BUILD_VERSION
