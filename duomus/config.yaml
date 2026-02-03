@@ -6,6 +6,7 @@ description: DuoMus support tools and web interface forwarder.
 url: https://github.com/focusware-develop/addon-duomus
 startup: services
 panel_icon: mdi:temperature-celsius
+panel_title: Duo Mus
 ingress: true
 init: false
 arch:

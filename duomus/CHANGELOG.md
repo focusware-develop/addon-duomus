@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.5] - 2026-02-03
+
+Updated the nginx configuration.
+
 ## [v0.0.4] - 2026-02-03
 
 Added ingress configuration.
