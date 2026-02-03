@@ -1,8 +1,8 @@
 ---
-name: DuoMus
-version: v0.0.4
+name: Duo Mus
+version: v0.0.5
 slug: duomus
-description: DuoMus support tools and web interface forwarder.
+description: Duo-Mus support tools and web interface forwarder.
 url: https://github.com/focusware-develop/addon-duomus
 startup: services
 panel_icon: mdi:temperature-celsius
