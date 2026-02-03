@@ -13,6 +13,7 @@ RUN \
 # Add nginx and create the run folder for nginx.
 RUN \
   apk --no-cache add \
+    nano \
     nginx \
   \
   && mkdir -p /run/nginx

@@ -1,0 +1,20 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community App: DuoMus
+# Configures the nginx service
+# ==============================================================================
+readonly NGINX_CONFIG_PATH=/etc/nginx/http.d/default.conf
+declare ipaddress
+
+# Check if a username is set
+bashio::config.require.ipaddress 'ipaddress'
+
+ipaddress=$(bashio::config 'ipaddress')
+ipaddress=$(bashio::string.lower "${ipaddress}")
+
+# Update the proxy url.
+sed -i "s/proxy_pass\\ .*/proxy_pass\\ http://${ipaddress}/" "${NGINX_CONFIG_PATH}" \
+    || bashio::exit.nok 'Failed configuring ip address'
+
+bashio::log.notice 'Changed the proxy to: http://'${ipaddress}
