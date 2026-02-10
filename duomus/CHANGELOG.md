@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.1.0] - 2026-02-10
+
+Initial beta release.
+Updated: ssh server configuration for the addon (allow sftp).
+
 ## [v0.0.7] - 2026-02-10
 
 Added: ssh server configuration for the addon.
