@@ -23,3 +23,6 @@ sed -i "s/proxy_pass .*/proxy_pass http:\/\/${ipaddress}\/;/" "${NGINX_CONFIG_PA
     || bashio::exit.nok 'Failed configuring ip address'
 
 bashio::log.notice 'Changed the proxy to: http://'${ipaddress}
+
+# Create a symbolic link to the firmware folder (used for firmware updates).
+ln -s /config/firmware /root/firmware
