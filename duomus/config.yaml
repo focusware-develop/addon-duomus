@@ -1,6 +1,6 @@
 ---
 name: DuoMus
-version: v0.0.5
+version: v0.0.6
 slug: duomus
 description: DuoMus support tools and web interface forwarder.
 url: https://github.com/focusware-develop/addon-duomus

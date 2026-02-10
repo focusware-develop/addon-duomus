@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.5] - 2026-02-10
+
+Updated the nginx proxy configuration.
+
 ## [v0.0.5] - 2026-02-03
 
 Updated the nginx configuration.
