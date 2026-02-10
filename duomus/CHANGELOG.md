@@ -1,6 +1,10 @@
 # Changelog
 
-## [v0.0.5] - 2026-02-10
+## [v0.0.7] - 2026-02-10
+
+Added: ssh server configuration for the addon.
+
+## [v0.0.6] - 2026-02-10
 
 Updated the nginx proxy configuration.
 

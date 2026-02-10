@@ -15,6 +15,7 @@ RUN \
   apk --no-cache add \
     nano \
     nginx \
+    openssh \
   \
   && mkdir -p /run/nginx
 
