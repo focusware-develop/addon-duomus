@@ -1,0 +1,22 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community App: DuoMus
+# Configures the SSH daemon
+# ==============================================================================
+readonly SSH_HOST_ED25519_KEY=/data/ssh_host_ed25519_key
+readonly SSH_HOST_RSA_KEY=/data/ssh_host_rsa_key
+
+# Generate host keys
+if ! bashio::fs.file_exists "${SSH_HOST_RSA_KEY}"; then
+    bashio::log.notice 'RSA host key missing, generating one...'
+
+    ssh-keygen -t rsa -f "${SSH_HOST_RSA_KEY}" -N "" \
+        || bashio::exit.nok 'Failed to generate RSA host key'
+fi
+
+if ! bashio::fs.file_exists "${SSH_HOST_ED25519_KEY}"; then
+    bashio::log.notice 'ED25519 host key missing, generating one...'
+    ssh-keygen -t ed25519 -f "${SSH_HOST_ED25519_KEY}" -N "" \
+        || bashio::exit.nok 'Failed to generate ED25519 host key'
+fi
