@@ -1,15 +1,10 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community App: Advanced SSH & Web Terminal
+# Home Assistant Community App: DuoMus
 # Starts the SSH service
 # ==============================================================================
 declare -a options
-
-# If SSH is disabled, use a fake sleep process
-if ! bashio::var.has_value "$(bashio::addon.port 2222)"; then
-    exec sleep 864000
-fi
 
 bashio::log.info 'Starting the SSH daemon...'
 
