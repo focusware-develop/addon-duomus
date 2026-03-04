@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.1] - 2026-03-04
+
+Allow the addon to access the UART on a Raspberry Pi (/dev/ttyS0).
+
 ## [v0.1.0] - 2026-02-10
 
 Initial beta release.
