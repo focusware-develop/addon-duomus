@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.1.2] - 2026-04-14
+
+- Increase the max body size for the nginx proxy configuration to 2MB. Needed for the firmware upload.
+- Check if the ttyS0 device exists for the UART. If not, use ttyACM0.
+
 ## [v0.1.1] - 2026-03-04
 
 Allow the addon to access the UART on a Raspberry Pi (/dev/ttyS0).
