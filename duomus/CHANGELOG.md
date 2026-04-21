@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.3] - 2026-04-21
+
+- Check if the ttyAMA3 device exists for the UART. If not, use ttyAMA0.
+
 ## [v0.1.2] - 2026-04-14
 
 - Increase the max body size for the nginx proxy configuration to 2MB. Needed for the firmware upload.
